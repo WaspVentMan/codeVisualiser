@@ -1,0 +1,1 @@
+To use the code visualiser, drag the files you want to visualise into the `analysisChamber` folder, then run the python file, once it is done it will open in the browser and you just have to click to start it!
