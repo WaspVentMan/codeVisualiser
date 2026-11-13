@@ -6,12 +6,21 @@
     <title>Audio Code Visualiser</title>
 </head>
 <body style="margin: 0%; overflow: hidden;">
-    <div onclick="visualise(); this.remove()" style="width: 100%; height: 100%; text-align: center; background-color: gray; position: absolute;">
-        <h1 style="position: absolute; top: calc(50vh - 19px); width: 100%;">CLICK TO START</h1>
+    <div style="width: 100%; height: 100%; text-align: center; background-color: gray; position: absolute; padding: 16px;">
+        <button onclick="visualise(); this.parentElement.remove()"><h1>CLICK TO START</h1></button>
+        <p>Note Duration: <input type="number" class="noteDuration" min="0" value="25" step="25" style="width: 48px;">ms</p>
+        <p><select class="waveType">
+            <option value="sine">Sine</option>
+            <option value="square" selected>Square</option>
+            <option value="sawtooth">Sawtooth</option>
+            <option value="triangle">Triangle</option>
+        </select> Wave</p>
+        <p>Render Spaces (Laggy): <input type="checkbox" class="renderGaps"></p>
+        <p>Extra Info: <input type="checkbox" class="renderInfo" checked></p>
     </div>
     <div style="width: 100%; height: 100vh; display: flex;">
-        <div class="codeViewer" style="width: 25%; height: 100vh; overflow: hidden; background-color: lightgray;"></div>
-        <div class="codeViewer2" style="width: 75%; height: 100vh; overflow: hidden; background-color: lightgray;"></div>
+        <div class="codeViewer" style="width: 25%; height: 100vh; overflow: hidden; background-color: white; background: linear-gradient(180deg,white 0%, white 87.5%, lightgray 87.5%, lightgray 100%);"></div>
+        <div class="codeViewer2" style="width: 75%; height: 100vh; overflow: hidden; background-color: gray;"></div>
     </div>
     <div class="stats" style="position: absolute; bottom: 16px; right: 16px; width: max-content; background-color: white;"></div>
 

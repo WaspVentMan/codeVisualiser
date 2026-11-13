@@ -17,9 +17,9 @@ async function gimmie(url, json=true) {
 
 async function wait(ms){
     return new Promise((resolve) => {
-        let start = Date.now()
+        //let start = Date.now()
         setTimeout(function() {
-            console.log(Date.now()-start)
+            ////console.log(Date.now()-start)
             resolve()
         }, ms)
     })
