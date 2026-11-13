@@ -21,6 +21,7 @@ function playNote(frequency, duration) {
 }
 
 async function visualise() {
+    let linesPrinted = 0
     audioCtx = new(window.AudioContext || window.webkitAudioContext)();
     for (let file in files){
         let lines = files[file]
@@ -39,6 +40,10 @@ async function visualise() {
             if (document.querySelector(".codeViewer2").childNodes.length > window.innerHeight/8){
                 document.querySelector(".codeViewer2").childNodes[0].remove()
             }
+
+            linesPrinted++
+
+            document.querySelector(".stats").textContent = linesPrinted + " Lines Displayed"
 
             window.scrollTo(0, 1e300)
             if (x%100==0 || true){
